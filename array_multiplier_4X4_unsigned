@@ -1,0 +1,48 @@
+// 4-bit by 4-bit array like unsigned Multiplier Structural Design
+
+module half_adder(a,b,s,cout);
+	input a,b;
+	output s,cout;
+
+	assign s = a ^ b;
+	assign cout = (a & b);
+endmodule
+
+module full_adder(a,b,cin,s,cout);
+	input a,b, cin;
+	output s,cout;
+	
+	assign s = a ^ b ^ cin;
+	assign cout =(a & b) | (b & cin) | (cin & a);
+endmodule
+
+
+
+module mult_4_bit(x,y,p);
+	input [3:0] x,y;
+	output [7:0] p;
+	
+	assign p[0] = x[0]&y[0];
+	
+	wire r1c1,r1c2,r1c3,r1c4,r1c5;
+	wire r2c1,r2c2,r2c3,r2c4,r2c5;
+	wire r3c1,r3c2,r3c3,r3c4,r3c5;
+	wire r4c1,r4c2;
+	
+	half_adder ha1(x[0]&y[1], x[1]&y[0],p[1],r1c1);
+	half_adder ha2(x[0]&y[2],x[1]&y[1],r1c2,r1c3);
+	half_adder ha3(x[0]&y[3],x[1]&y[2],r1c4,r1c5);
+	
+	full_adder fa1(x[2]&y[0],r1c2,r1c3,p[2],r2c1);
+	full_adder fa2(x[2]&y[1],r1c3,r1c4,r2c2,r2c3);
+	full_adder fa3(x[2]&y[2],r1c5,x[1]&y[3],r2c4,r2c5);
+	
+	full_adder fa4(x[3]&y[0],r2c1,r2c2,p[3],r3c1);
+	full_adder fa5(x[3]&y[1],r2c3,r2c4,r3c2,r3c3);
+	full_adder fa6(x[3]&y[2],r2c5,x[2]&y[3],r3c4,r3c5);
+	
+	half_adder ha4(r3c1,r3c2,p[4],r4c1);
+	full_adder fa7(r3c3,r4c1,r3c4,p[5],r4c2);
+	full_adder fa8(x[3]&y[3],r3c5,r4c2,p[6],p[7]);
+	
+endmodule	
