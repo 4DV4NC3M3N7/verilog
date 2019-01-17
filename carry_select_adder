@@ -1,0 +1,103 @@
+//Full program:
+//carry select adder 8 bit
+
+
+module XOR(a,b,c);
+input a,b;
+output c;
+assign c = a ^ b;
+endmodule
+
+module AND(a,b,c);
+input a,b;
+output c;
+assign c = a & b;
+endmodule
+
+
+module OR3(a,b,c,out);
+input a,b,c;
+output out;
+assign out = a | b | c;
+endmodule
+
+module mux_2_to_1(A,B,Sel,Out);
+input A,B,Sel;
+output Out;
+
+assign Out = Sel? B:A;
+
+endmodule
+
+
+module FA(X,Y,Z,sum,carry);
+input X,Y,Z;
+output sum,carry;
+
+wire [4:1] w;
+
+XOR xor1(.a(X),.b(Y),.c(w[1]));
+XOR xor2(.a(Z),.b(w[1]),.c(sum));
+
+AND and1(.a(X),.b(Y),.c(w[2]));
+AND and2(.a(Y),.b(Z),.c(w[3]));
+AND and3(.a(Z),.b(X),.c(w[4]));
+
+OR3 or1(.a(w[2]),.b(w[3]),.c(w[4]),.out(carry));
+endmodule
+
+
+
+//***********************************************************************************************
+
+
+
+module rca(x,y,c,s,c4);
+input [3:0] x,y;
+input [3:0] c;
+output c4;
+output [3:0] s;
+
+
+
+FA fa1( .X(x[0]), .Y(y[0]), .Z(c[0]), .sum(s[0]), .carry(c[1]));
+FA fa2( .X(x[1]), .Y(y[1]), .Z(c[1]), .sum(s[1]), .carry(c[2]));
+FA fa3( .X(x[2]), .Y(y[2]), .Z(c[2]), .sum(s[2]), .carry(c[3]));
+FA fa4( .X(x[3]), .Y(y[3]), .Z(c[3]), .sum(s[3]), .carry(c4));
+
+endmodule
+
+//*************************************************************************************************
+
+module carry_select_adder(A,B,cin,S,C);
+input [7:0] A;
+input [7:0] B;input cin;
+output C;
+output [7:0] S;
+
+parameter zz=0,zz1=1;
+ wire zero,one;
+
+wire [3:0] sl;
+wire [7:4] slow,shigh;
+wire c0;
+wire chigh;
+wire clow;
+
+assign zero = zz;
+assign one = zz1;
+
+rca rac1(.x(A[3:0]),.y(B[3:0]),.c(cin),.s(sl[3:0]),.c4(c0));
+rca rac2(.x(A[7:4]),.y(B[7:4]),.c(zero),.s(slow[7:4]),.c4(clow));
+rca rac3(.x(A[7:4]),.y(B[7:4]),.c(one),.s(shigh[7:4]),.c4(chigh));
+
+mux_2_to_1 mux1( .A(slow[4]),.B(shigh[4]),.Sel(c0),.Out(S[4]));
+mux_2_to_1 mux2( .A(slow[5]),.B(shigh[5]),.Sel(c0),.Out(S[5]));
+mux_2_to_1 mux3( .A(slow[6]),.B(shigh[6]),.Sel(c0),.Out(S[6]));
+mux_2_to_1 mux4( .A(slow[7]),.B(shigh[7]),.Sel(c0),.Out(S[7]));
+mux_2_to_1 mux5( .A(clow),.B(chigh),.Sel(c0),.Out(C));
+
+assign S[3:0] = sl;
+
+endmodule
+
