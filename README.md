@@ -8,8 +8,47 @@ Please see the JAN_1_19_ARRAY_MULTIPLIER.docx to view the block diagram of the a
 In verilogOutputSimpleSimulation.txt,
 
 Here,a simulation for 4 bit adder is done and the results are written into a .txt file.The test vectors are taken from .txt file.
+•	
+			
+		Use  $fread to open the file, $fwrite to write into .txt file.
+•		
+
+		After simulation,the results(sum and carry) must be written into the other.txt file.
+•		
+
+	Again,the elements of the .txt file must be now arranged in a matrix form,i.e,4 outputs
+             Must be arranged as:
+
+		Output1	Output2
+		Output3	Output4
+                                                    
+.txt file
 
 
+Implementation:
+1.To write the contents(test vectors) from the .txt file,we follow:
+
+The test vectors are taken into the testbench using  $readmemb command.
+
+The test vectors are stored into the RAM memory defined by the number of test vectors as:
+
+	Test vector bits	RAM name(register type)		Memory length
+	   [3:0] 			 aRAM			[0:2]
+	
+	reg   [3:0]  aRAM [0:2];
+
+2.We use a for loop to read the contents into input registers from the RAM memory.
+******************************************************************************
+
+	integer i;
+	for( i = 0;i < 3;i = i + 1)
+	begin
+	a[i] = aRAM[i];
+	$display(“ %b ”,a );  
+	end
+*************************************************************************************
+3.Now,write the output vector into other .txt file using $fwrite operation.
+Working:
 1.Design a simple adder(4 bit adder) in verilog in Xilinx ISE.
 
 
