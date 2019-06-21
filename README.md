@@ -48,7 +48,10 @@ The test vectors are stored into the RAM memory defined by the number of test ve
 	end
 *************************************************************************************
 3.Now,write the output vector into other .txt file using $fwrite operation.
-Working:
+
+
+
+COMPLETE Working:
 1.Design a simple adder(4 bit adder) in verilog in Xilinx ISE.
 
 
