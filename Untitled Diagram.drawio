@@ -1,1 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2022-09-20T01:04:20.341Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="tNp86iV2GPSJ4TLxLIKC" version="20.3.3" type="github"><diagram id="74w6JPEJQIkCMHyagSD3" name="Page-1">7Zhtb9owEMc/TV4W5YEQeLnSbpPaTVN5sbE3kyEm8ebkIudCQj/97MR5UijNJCqoNAmh3N8++3y+n2MwnGVUfBIkCb+AT7lhm35hOHeGbU8tT34r4VAJ3nxeCYFgfiVZrbBiz1SLplYz5tO01xEBOLKkL24hjukWexoRAvJ+tx3w/qwJCehAWG0JH6rfmY9hpc5ds9U/UxaE9cyWqVsiUnfWQhoSH/KO5NwbzlIAYPUUFUvKVe7qvFR+H19obQITNMYxDuun5eOfb5l583O9yfHX+iF+yG4cHRse6gVTX65fmyAwhABiwu9b9VZAFvtUjWpKq+3zCJBI0ZLib4p40JtJMgQphRhx3UoLhj+U+8TV1rrTclfokUvjUBsxikPHSZnrblvrVlq1X7U+tagX06alFDKxpSdyVZcfEQHFE/3sZnMlFBQiKuORfoJygmzfj4Po8gyafu0Oyge9if+woXrcPeGZnsmwZ1yGe7uRD4F6WMkVYK3KSZqGYS1wLjlTe56HDOkqIWWCckl6f0dJmlTw7VihKkMPtacCaXE68cNE1Q5zDU59cmgz72CopbBDYK2dPbOz94LKGUveHlny7iVL3n695A1bfswlRCoJakGh+qZFArHKiW3CrlExByUkVBAEkTZjif5gq5DtsHGKSIwsJao8Q7YNVU2SvWpII8I5Ff3ZEKoXRNnxeBTN/JNjAYxgty0963V+z4DrzJl4bg9Y2xwS61j2xB1C670VtPP3Au0VvN/ckbB7l4TdHQv7B99XGCny0myDgmwHtKYqwB2WdKYKZxYHTZ8WXElnS+FVMWdZfeIce0hcc5Pu8jZ7K97qyf4DNwI4byRwi0sC540F7isIiQx77kIkaJpxvFJ43P79cjodwmNNj8DjvhU8i7GpflKp6ua5vX6UV4tKJEkiIBGMoLLiLNpUx5m6ZGwYple5K4v+iea6R0409zwnmjTbX99lW+cvDOf+Lw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-09-20T01:10:59.887Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="PfT0dYDYKpN7o1FU5Do0" version="20.3.3" type="github">
+  <diagram id="74w6JPEJQIkCMHyagSD3" name="Page-1">
+    <mxGraphModel dx="417" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YRCLkPu0-ZYbwt_YKnKu-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="YRCLkPu0-ZYbwt_YKnKu-1" target="YRCLkPu0-ZYbwt_YKnKu-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YRCLkPu0-ZYbwt_YKnKu-1" value="&lt;b&gt;Start&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="180" y="70" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YRCLkPu0-ZYbwt_YKnKu-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="YRCLkPu0-ZYbwt_YKnKu-2" target="YRCLkPu0-ZYbwt_YKnKu-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YRCLkPu0-ZYbwt_YKnKu-2" value="&lt;b&gt;+ Compare the exponent of the two operators&lt;br&gt;+ Shift the mantisa which have smaller exponent to match exponent of the operators.&lt;br&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="63.75" y="200" width="312.5" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YRCLkPu0-ZYbwt_YKnKu-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="YRCLkPu0-ZYbwt_YKnKu-5" target="YRCLkPu0-ZYbwt_YKnKu-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YRCLkPu0-ZYbwt_YKnKu-5" value="&lt;b&gt;+ Add or subtract the mantisas after shifting the smaller ones.&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="115" y="320" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YRCLkPu0-ZYbwt_YKnKu-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="YRCLkPu0-ZYbwt_YKnKu-7" target="YRCLkPu0-ZYbwt_YKnKu-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YRCLkPu0-ZYbwt_YKnKu-7" value="&lt;b&gt;+ Normalizing the result.&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="440" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YRCLkPu0-ZYbwt_YKnKu-9" value="&lt;b&gt;+ Rounding the mantisa to the appropriate number of bits&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="95" y="550" width="250" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
